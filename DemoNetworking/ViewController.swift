@@ -8,18 +8,37 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+    lazy var textView:UITextView! =
+    {
+        let txtView = UITextView(frame: view.frame)
+        txtView.frame.origin.y += 60
+        txtView.text = "No Data"
+        return txtView
+    }()
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        view.addSubview(textView)
+        
+        NetworkManager.makeRequest(parameters: nil, url: "https://api.myjson.com/bins/l0h7c")
+        {
+            (response:APIResponse<User>?) in
+            
+            guard let response = response?.data else
+            {
+                print("No data")
+                return
+            }
+            
+            self.textView.text = "username:\(response.username) \n age:\(response.age)"
+            
+            print(response)
+        }
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-

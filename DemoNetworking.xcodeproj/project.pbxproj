@@ -12,6 +12,10 @@
 		5007762E212D77B900F940A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5007762C212D77B900F940A0 /* Main.storyboard */; };
 		50077630212D77BD00F940A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5007762F212D77BD00F940A0 /* Assets.xcassets */; };
 		50077633212D77BD00F940A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50077631212D77BD00F940A0 /* LaunchScreen.storyboard */; };
+		5007763C212D781500F940A0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5007763B212D781500F940A0 /* NetworkManager.swift */; };
+		5007763F212D784000F940A0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5007763E212D784000F940A0 /* Alamofire.framework */; };
+		50077642212D785A00F940A0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50077641212D785A00F940A0 /* APIResponse.swift */; };
+		50077644212D78BD00F940A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50077643212D78BD00F940A0 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		5007762F212D77BD00F940A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50077632212D77BD00F940A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50077634212D77BD00F940A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5007763B212D781500F940A0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5007763E212D784000F940A0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		50077641212D785A00F940A0 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		50077643212D78BD00F940A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5007763F212D784000F940A0 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,7 @@
 			children = (
 				50077627212D77B900F940A0 /* DemoNetworking */,
 				50077626212D77B900F940A0 /* Products */,
+				5007763D212D784000F940A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,7 +64,9 @@
 		50077627212D77B900F940A0 /* DemoNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				50077640212D785000F940A0 /* Models */,
 				50077628212D77B900F940A0 /* AppDelegate.swift */,
+				5007763B212D781500F940A0 /* NetworkManager.swift */,
 				5007762A212D77B900F940A0 /* ViewController.swift */,
 				5007762C212D77B900F940A0 /* Main.storyboard */,
 				5007762F212D77BD00F940A0 /* Assets.xcassets */,
@@ -62,6 +74,23 @@
 				50077634212D77BD00F940A0 /* Info.plist */,
 			);
 			path = DemoNetworking;
+			sourceTree = "<group>";
+		};
+		5007763D212D784000F940A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5007763E212D784000F940A0 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50077640212D785000F940A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50077641212D785A00F940A0 /* APIResponse.swift */,
+				50077643212D78BD00F940A0 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +103,7 @@
 				50077621212D77B900F940A0 /* Sources */,
 				50077622212D77B900F940A0 /* Frameworks */,
 				50077623212D77B900F940A0 /* Resources */,
+				5007763A212D77F600F940A0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -130,12 +160,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5007763A212D77F600F940A0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50077621212D77B900F940A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5007763C212D781500F940A0 /* NetworkManager.swift in Sources */,
+				50077642212D785A00F940A0 /* APIResponse.swift in Sources */,
 				5007762B212D77B900F940A0 /* ViewController.swift in Sources */,
+				50077644212D78BD00F940A0 /* User.swift in Sources */,
 				50077629212D77B900F940A0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +331,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DemoNetworking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +352,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DemoNetworking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
