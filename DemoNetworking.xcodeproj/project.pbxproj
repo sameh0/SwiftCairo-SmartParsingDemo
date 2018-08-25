@@ -16,6 +16,7 @@
 		5007763F212D784000F940A0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5007763E212D784000F940A0 /* Alamofire.framework */; };
 		50077642212D785A00F940A0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50077641212D785A00F940A0 /* APIResponse.swift */; };
 		50077644212D78BD00F940A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50077643212D78BD00F940A0 /* User.swift */; };
+		50B6968F21319FAC007D58BB /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B6968E21319FAC007D58BB /* Car.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5007763E212D784000F940A0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 		50077641212D785A00F940A0 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		50077643212D78BD00F940A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		50B6968E21319FAC007D58BB /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +67,13 @@
 			isa = PBXGroup;
 			children = (
 				50077640212D785000F940A0 /* Models */,
-				50077628212D77B900F940A0 /* AppDelegate.swift */,
 				5007763B212D781500F940A0 /* NetworkManager.swift */,
 				5007762A212D77B900F940A0 /* ViewController.swift */,
 				5007762C212D77B900F940A0 /* Main.storyboard */,
 				5007762F212D77BD00F940A0 /* Assets.xcassets */,
 				50077631212D77BD00F940A0 /* LaunchScreen.storyboard */,
 				50077634212D77BD00F940A0 /* Info.plist */,
+				50077628212D77B900F940A0 /* AppDelegate.swift */,
 			);
 			path = DemoNetworking;
 			sourceTree = "<group>";
@@ -89,6 +91,7 @@
 			children = (
 				50077641212D785A00F940A0 /* APIResponse.swift */,
 				50077643212D78BD00F940A0 /* User.swift */,
+				50B6968E21319FAC007D58BB /* Car.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				5007763C212D781500F940A0 /* NetworkManager.swift in Sources */,
 				50077642212D785A00F940A0 /* APIResponse.swift in Sources */,
 				5007762B212D77B900F940A0 /* ViewController.swift in Sources */,
+				50B6968F21319FAC007D58BB /* Car.swift in Sources */,
 				50077644212D78BD00F940A0 /* User.swift in Sources */,
 				50077629212D77B900F940A0 /* AppDelegate.swift in Sources */,
 			);

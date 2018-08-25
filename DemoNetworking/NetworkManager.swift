@@ -55,9 +55,9 @@ extension Sequence
 
 class NetworkManager
 {
-   class func makeRequest<T:Decodable>(parameters:Encodable?,url:String, completion: @escaping (_ response:APIResponse<T>?) -> ())
+    class func makeRequest<T:Decodable>(parameters:Encodable?,url:String, completion: @escaping (_ response:APIResponse<T>?) -> ())
     {
-        let json = parameters?.toJson() ?? nil 
+        let json = parameters?.toJson() ?? nil
         
         Alamofire.request(
             url,
@@ -66,7 +66,6 @@ class NetworkManager
             encoding: JSONEncoding.default
             )
             
-            .validate()
             .validate(contentType: ["application/json"])
             
             .responseJSON
@@ -75,11 +74,8 @@ class NetworkManager
                 
                 switch response.result
                 {
-                    
                 case .success(let result):
-                    
                     let obj:APIResponse<T>? = (result as? NSDictionary)?.getObject()
-                        //?.getObject()
                     completion(obj)
                     
                 case .failure( _):
